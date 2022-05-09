@@ -71,7 +71,6 @@ def convert_nodes_from_json(obj, node_list, file="temp"):
 
         for link_num in node_group['links_obj']:
             link = node_group['links_obj'][link_num]
-            print(link)
             if link['input'][1] not in geonode_modifier.node_group.nodes[link['input'][0]].inputs:
                 input_type = geonode_modifier.node_group.nodes[link['output'][0]].outputs[link['output'][1]].type
                 geonode_modifier.node_group.nodes[link['input'][0]].inputs.new(input_type, link['input'][1])
